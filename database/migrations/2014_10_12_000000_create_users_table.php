@@ -14,15 +14,13 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id(); //=auto incrementing id with a name of id, primary key
-            $table->string('name');  //varchar(255) column name of name
-            $table->string('email')->unique();  //varchar(255) column name of email, attribute of unique
-            $table->timestamp('email_verified_at')->nullable(); //timestamp type with column name of email_verified_at and it is hold null values
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();// this will create two time stamp columns which are created_at and updated_at
-            //created_at -> filled up if record is created
-            //update -> filled up if the record is updated
+          $table->id();
+          $table->string('first_name');
+          $table->string('last_name');
+          $table->string('email')->unique();
+          $table->string('contact_number');
+            $table->timestamps();
+
         });
     }
 
